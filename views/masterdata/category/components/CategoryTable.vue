@@ -1,14 +1,14 @@
 <template>
   <a-table
     :columns="columns"
-    :row-key="record => record.login.uuid"
+    :row-key="record => record.id"
     :data-source="dataSource"
     :pagination="pagination"
     :loading="loading"
     @change="handleTableChange"
   >
     <template #bodyCell="{ column, text }">
-      <template v-if="column.dataIndex === 'name'">{{ text.first }} {{ text.last }}</template>
+      <template v-if="column.dataIndex === 'name'">text</template>
     </template>
   </a-table>
 </template>
@@ -19,15 +19,19 @@ import { usePagination } from 'vue-request';
 import axios from 'axios';
 const columns = [
   {
+    title: 'ID',
+    dataIndex: 'id',
+    sorter: true,
+    width: '20%',
+  },
+  {
     title: 'Name',
     dataIndex: 'name',
-    sorter: true,
     width: '20%',
   },
   {
     title: 'Slug',
     dataIndex: 'slug',
-    width: '20%',
   },
 ];
 
@@ -40,6 +44,7 @@ type APIParams = {
 };
 type APIResult = {
   results: {
+    id: number,
     name: string;
     slug: string;
   }[];

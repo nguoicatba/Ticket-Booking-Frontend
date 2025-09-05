@@ -5,7 +5,7 @@
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
           <pie-chart-outlined />
-          <span>Option 1</span>
+          <span><router-link to="category">Category</router-link></span>
         </a-menu-item>
         <a-menu-item key="2">
           <desktop-outlined />
@@ -46,7 +46,7 @@
           <a-breadcrumb-item>Bill</a-breadcrumb-item>
         </a-breadcrumb>
         <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
-          Bill is a cat.
+          <router-view></router-view>
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
@@ -64,6 +64,7 @@ import {
   FileOutlined,
 } from '@ant-design/icons-vue';
 import { ref } from 'vue';
+import { RouterView } from 'vue-router';
 const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(['1']);
 </script>

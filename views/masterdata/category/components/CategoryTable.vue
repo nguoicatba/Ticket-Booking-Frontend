@@ -1,7 +1,7 @@
 <template>
   <a-table
     :columns="columns"
-    :row-key="record => record.id"
+    :row-key="(record:any) => record.id"
     :data-source="dataSource"
     :pagination="pagination"
     :loading="loading"

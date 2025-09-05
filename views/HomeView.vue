@@ -5,7 +5,7 @@ import BasicTable from '@/components/BasicTable/BasicTable.vue';
 
 <template>
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
     <BasicTable></BasicTable>
   </main>
 </template>
